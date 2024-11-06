@@ -33,7 +33,7 @@ The gripper outputs angle of the motor [RAD], and take commands on target voltag
 
 2x NSK Linear Guides LH100120ANK1B01PN1, LH, https://se.rs-online.com/web/p/linear-guides/4979411
 
-1x Arduino nano esp32 (not with pre souldered pins) https://store.arduino.cc/en-se/products/nano-esp32?srsltid=AfmBOoq2j8PJsWTmrSQZ9lXL6lKOGxVrW5B-yabFGoDSFEEn9P-Iw4cd
+1x Arduino nano esp32 (not with pre soldered pins) https://store.arduino.cc/en-se/products/nano-esp32?srsltid=AfmBOoq2j8PJsWTmrSQZ9lXL6lKOGxVrW5B-yabFGoDSFEEn9P-Iw4cd
 
 1x iPower Motor GM5208-24 Brushless Gimbal Motor https://eu.robotshop.com/products/ipower-motor-gm5208-24-brushless-gimbal-motor
 
@@ -183,7 +183,7 @@ Install the encoder with the tools provided and 2x m2.5 8mm screw. Make sure thi
 
 ![Alt Text](images/encoder.jpg)
 
-Nextup, wire all the electronics, schematics, the dirver mounts with 3x m3 8mm and the aruino nano ESP32 with 2x m1.5 6mm. Take care so that the pins on the arduino is souldered on the correct side. See figure below. You might need to flip the motor connector to get it rotating the correct direction. 
+Nextup, wire all the electronics, schematics, the dirver mounts with 3x m3 8mm and the aruino nano ESP32 with 2x m1.5 6mm. Take care so that the pins on the arduino is soldered on the correct side. See figure below. You might need to flip the motor connector to get it rotating the correct direction. I bent the dupont connector 90 deg and put heat shrink on it, the normal dupont connector is to large in some instances, you could also solder the wires directly on. 
 ![Alt Text](images/drawing.png)
 
 ![Alt Text](images/all_ecelctronics.jpg)
