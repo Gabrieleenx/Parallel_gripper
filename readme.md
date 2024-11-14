@@ -15,7 +15,7 @@ This gripper was designed with the goal of having fast low-level force control a
 * Build guide
 
 ## Overview of construction
-The construction of the gripper is fairly simple, it is after all only a parallel gripper. The main selling point is that we are using a bldc motor together with an encoder, which allows us to control it FOC and get good motor characteristics, we are using SimpleFOC https://simplefoc.com/. The motor is then connected to a 2:1 gear reduction, which dives a pully with a belt on it. The fingers of the gripper run along 2 linear bearings. The motor is controlled by an ESP32 S3 microcontroller. We also deigned a quick connector for the UR10 mount.
+The construction of the gripper is fairly simple, it is after all only a parallel gripper. The main selling point is that we are using a bldc motor together with an encoder, which allows us to control it with FOC and get good motor characteristics, we are using SimpleFOC https://simplefoc.com/. The motor is then connected to a 2:1 gear reduction, which dives a pully with a belt on it. The fingers of the gripper run along 2 linear bearings. The motor is controlled by an ESP32 S3 microcontroller. We also deigned a quick connector for the UR10 mount.
 
 ![Alt Text](images/drawing_inside.png)
 
@@ -61,9 +61,9 @@ M2.5 [2x 6mm, 2x 8mm, 2x 10 mm, 8x 16 mm, 4x 20mm]
 
 M3 [13x 8mm, 8x 10mm, 2x 14mm,4x 20mm, 3x 30mm, 1x 40mm, 2x 50mm]
 
-M4 [3x 25 mm (or slightly smaller)]
+M4 [3x 25 mm (or 20 mm should also work)]
 
-You will need nuts (also 2x square nuts for m3), wires and dupont cables. 
+You will need nuts (also 2x square nuts for m3, one for each finger), wires and dupont cables. 
 
 ### 3D printed parts
 See stl_files folder for all the stl files. Almost all parts are printed in PLA and most with around 30% infil. Some of the parts has been slightly modified from the gripper in the pictures, this minimize the amount of post modification needed to the parts. 
@@ -73,6 +73,7 @@ Parts printed in PLA:
 * bottom_part.stl
 * drill_pully_holder.stl
 * finger.stl (printed at 100 % infil)
+* finger_base.stl (printed at 100 % infil)
 * gear_spacer.stl  (printed at 100 % infil)
 * middle_part.stl
 * motor_to_gear.stl
@@ -91,7 +92,7 @@ The contact pads are printed with dual material
 ### Other parts
 
 * You will need a powersuply that can deliver 20 V and atleast 1A (preferably more, I use a bench power suply with adjustable volatage and current limits). 
-* You will also need to get or create power cables to the motor driver, I have a small connector close to the gripper so that it is easy to diconnect. 
+* You will also need to get or create cables to connect the power supply with the motor driver, I have a small connector close to the gripper so that it is easy to diconnect. 
 * I would recommed getting velcro strips for cable managment, I bolted some of them under the gipper to reduce forces on the contacts.
 * You will need a USB cable, make sure it is a decent cable, otherwise power and communication issues might occure. 
 
@@ -138,7 +139,7 @@ Assemble the part, but only losely, this can be a bit finiky.
 
 ![Alt Text](images/belt_tension1.jpg)
 
-Wiggle in the two linear bearings, this it also a bit finiky. screw in with 2x m3 20mm and 4x m3 10mm, also be careful so that the slider doesn't fall of, some version of linear bearing do go easily together again (not sure about this one).   
+Wiggle in the two linear bearings, this it also a bit finiky. screw in with 2x m3 20mm and 4x m3 10mm, also be careful so that the slider doesn't fall of, some versions of linear bearings do not go easily together again (not sure about this one).   
 
 ![Alt Text](images/linear_screw.jpg)
 
@@ -183,7 +184,7 @@ Install the encoder with the tools provided and 2x m2.5 8mm screw. Make sure thi
 
 ![Alt Text](images/encoder.jpg)
 
-Nextup, wire all the electronics, schematics, the dirver mounts with 3x m3 8mm and the aruino nano ESP32 with 2x m1.5 6mm. Take care so that the pins on the arduino is soldered on the correct side. See figure below. You might need to flip the motor connector to get it rotating the correct direction. I bent the dupont connector 90 deg and put heat shrink on it, the normal dupont connector is to large in some instances, you could also solder the wires directly on. 
+Nextup, wire all the electronics, the schematics is found below. The dirver mounts with 3x m3 8mm and the aruino nano ESP32 with 2x m1.5 6mm. Take care so that the pins on the arduino is soldered on the side with the ESP 32, see figure below. You might need to flip the motor connector to get it rotating the correct direction. I bent the dupont connectors 90 deg and put heat shrink on it, the normal dupont connector is to large in some instances to mount, you could also solder the wires directly on. 
 ![Alt Text](images/drawing.png)
 
 ![Alt Text](images/all_ecelctronics.jpg)
@@ -211,7 +212,7 @@ Drill hole in shell to put velcro strips for cable managment, I secure the velcr
 ![Alt Text](images/shell1.jpg)
 
 
-Thhe gripper should now be finished, if you have problems with belt skipping, then you need to tension the belt more. 
+Thhe gripper should now be finished, if you have problems with belt skipping, then you need to tension the belt more. Also make sure the belt tracks good when tensioning, the belt shouldn't try to move up or down.  
 
 ![Alt Text](images/gripper_done.jpg)
 
